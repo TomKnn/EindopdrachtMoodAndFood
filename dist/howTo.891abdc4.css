@@ -1,0 +1,31 @@
+.Robot{
+    position: absolute;
+    top: 38%;
+    left: 73%;
+}
+.logo {
+    position: absolute;
+    height: 165px;
+    width: 330px;
+    top: 10%;
+    left: 28px;
+    z-index: 1;
+}
+.block{
+    position: absolute;
+    height: 700px;
+    width: 350px;
+    left: 1%;
+    top: 7%;
+    opacity: 70%;
+    z-index: auto;
+}
+.howToBig{
+    position: absolute;
+    left:35%;
+    top:22%;
+    height:70px;
+    width: 359px;
+}
+
+/*# sourceMappingURL=howTo.891abdc4.css.map */

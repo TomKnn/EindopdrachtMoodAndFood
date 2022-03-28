@@ -1,0 +1,32 @@
+.Jezus{
+    position: absolute;
+    height: 317px;
+    width: 225px;
+    top: 225px;
+    left: 678px;
+}
+.Jezus:active{
+    height: 305px;
+    width: 215px;
+    top: 229px;
+    left: 681px;
+    z-index: 2;
+}
+.Hitler{
+    position: absolute;
+    top: 30%;
+    left: 56%;
+}
+
+.Robot{
+    position: absolute;
+    top: 38%;
+    left: 73%;
+}
+.logo {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    z-index: 2;
+}
+/*# sourceMappingURL=start.73505ebe.css.map */

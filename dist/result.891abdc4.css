@@ -1,0 +1,46 @@
+h1 {
+    position: absolute;
+    top: 17%;
+    left: 30%;
+    font-family: Arial;
+    color: lightgreen;
+}
+
+.Robot{
+    position: absolute;
+    top: 38%;
+    left: 73%;
+}
+.logo {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    z-index: 2;
+}
+}
+.block{
+    position: absolute;
+    height: 700px;
+    width: 350px;
+    left: 1%;
+    top: 7%;
+    opacity: 70%;
+    z-index: auto;
+}
+.howToBig{
+    position: absolute;
+    left:35%;
+    top:22%;
+    height:70px;
+    width: 359px;
+}
+
+.kader{
+    position: absolute;
+    left:43%;
+    top: 25%;
+    height: 500px;
+    width: 645px;
+}
+
+/*# sourceMappingURL=result.891abdc4.css.map */

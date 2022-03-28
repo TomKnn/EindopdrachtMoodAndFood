@@ -1,0 +1,56 @@
+.question{
+    position: absolute;
+    z-index: auto;
+}
+const Jezus = document.getElementById("Jezus");
+.Jezus{
+
+    height: 290px;
+    width: 206px;
+    top: 220px;
+    left: 678px;
+}
+.Jezus:active{
+    height: 280px;
+    width: 197px;
+    top: 224px;
+    left: 681px;
+}
+.Hitler{
+    position: absolute;
+    height: 290px;
+    top: 220px;
+    left: 56%;
+}
+
+.Robot{
+    position: absolute;
+    width: 280px;
+    top: 258px;
+    left: 71%;
+}
+.logo {
+    position: absolute;
+    top: 4%;
+    left: 53%;
+    z-index: 2;
+}
+.zigeunerKid{
+    position: absolute;
+    height: 260px;
+    width: 220px;
+    top: 69%;
+    left: 65%;
+    rotation: 30deg;
+}
+.voel {
+    position:absolute;
+    height: 50px;
+    width: 500px;
+    opacity: 90%;
+    top: 162px;
+    left: 30%;
+    z-index: auto;
+}
+
+/*# sourceMappingURL=question1.73505ebe.css.map */
