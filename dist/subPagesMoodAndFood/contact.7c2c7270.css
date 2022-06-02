@@ -1,0 +1,35 @@
+html {
+    background:url("https://raw.githubusercontent.com/TomKnn/EindopdrachtMoodAndFood/master/assets/backgroundFinal.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    /*overflow: hidden;*/
+}
+.logo {
+    position: absolute;
+    height: 15%;
+    width: 47%;
+    top: 6%;
+    left: 48%;
+    z-index: 2;
+}
+.thoughtBox{
+    position: absolute;
+    width: 1100px;
+    top: 3%;
+    left: 40%;
+    z-index: auto;
+}
+.contactAdres{
+    position: absolute;
+    left:35%;
+    top:45%;
+}
+.balk{
+    position: absolute;
+    left: 55px;
+    top: 960px;
+    opacity: 80%;
+    width: 1800px;
+    z-index: 2;
+}
+/*# sourceMappingURL=contact.7c2c7270.css.map */

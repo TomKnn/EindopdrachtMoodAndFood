@@ -1,0 +1,127 @@
+html {
+    background:url(https://raw.githubusercontent.com/TomKnn/EindopdrachtMoodAndFood/master/assets/backgroundFinal.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+
+}
+.logo {
+    position: absolute;
+    height: 140px;
+    width: 47%;
+    top: 6%;
+    left: 48%;
+    z-index: 2;
+}
+
+h1{
+    font-family: Arial;
+    color: lightgreen;
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 10px;
+    z-index: auto;
+}
+
+.thoughtBox{
+    position: absolute;
+    width: 1100px;
+    top: 3%;
+    left: 40%;
+    z-index: auto;
+}
+
+#container{
+    position: relative;
+    height: 1200px;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*height: 1000px;*/
+}
+
+.startButton {
+    position:absolute ;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 100%;
+    height: 170px;
+    width: 170px;
+
+    /*top: 537px;*/
+    /*left: 796px;*/
+    /*z-index: 2;*/
+}
+.startButton:active{
+    position:absolute;
+    opacity: 100%;
+    height: 160px;
+    width: 160px;
+    top: 542px;
+    left: 800px;
+    z-index: 2;
+}
+.searchButton {
+    /*position:absolute;*/
+    justify-content: center;
+    opacity: 100%;
+    height: 170px;
+    width: 170px;
+    /*top: 520px;*/
+    /*left: 796px;*/
+    z-index: 2;
+}
+.search{
+    position: absolute;
+    padding-top: 500px;
+    padding: 500px;
+}
+.kader {
+    position: absolute;
+    opacity: 64%;
+    top: 477px;
+    left: 118px;
+    z-index: 2;
+}
+.howTo{
+    position:absolute;
+    height: 50px;
+    width: 150px;
+    top: 200px;
+    left: 400px;
+
+}
+.howToStart{
+    position: absolute;
+    top: 559px;
+    left: 166px;
+    z-index: 2;
+}
+.browse{
+    position: absolute;
+    top: 677px;
+    left: 165px;
+    z-index: 2;
+}
+.contact{
+    position: absolute;
+    top: 797px;
+    left: 165px;
+    z-index: 2;
+}
+.balk{
+    position: absolute;
+    left: 55px;
+    top: 950px;
+    opacity: 80%;
+    width: 1800px;
+    z-index: 2;
+}
+
+
+/*#child{*/
+/*    position: relative;*/
+/*    top:955px;*/
+/*}*/
+

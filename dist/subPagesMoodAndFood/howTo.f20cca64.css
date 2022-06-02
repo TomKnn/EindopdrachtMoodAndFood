@@ -1,0 +1,38 @@
+html {
+    background:url("https://raw.githubusercontent.com/TomKnn/EindopdrachtMoodAndFood/master/assets/backgroundFinal.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    /*overflow: hidden;*/
+}
+.logo {
+    position: absolute;
+    height: 15%;
+    width: 47%;
+    top: 6%;
+    left: 48%;
+    z-index: 2;
+}
+.block{
+    position: absolute;
+    height: 1050px;
+    width: 400px;
+    left: 2%;
+    top: 0%;
+    opacity: 70%;
+    z-index: auto;
+}
+.howToBig{
+    position: absolute;
+    left:35%;
+    top:15%;
+    height:70px;
+    width: 359px;
+}
+.kader{
+    position: absolute;
+    left:42%;
+    top: 29%;
+    height: 600px;
+    width: 700px;
+}
+/*# sourceMappingURL=howTo.f20cca64.css.map */

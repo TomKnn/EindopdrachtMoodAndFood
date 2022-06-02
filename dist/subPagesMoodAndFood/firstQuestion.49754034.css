@@ -1,0 +1,90 @@
+html {
+    background:url("https://raw.githubusercontent.com/TomKnn/EindopdrachtMoodAndFood/master/assets/backgroundFinal.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+.logo {
+    position: absolute;
+    height: 140px;
+    width: 47%;
+    top: 6%;
+    left: 48%;
+    z-index: 2;
+}
+.thoughtBox{
+    position: absolute;
+    width: 1000px;
+    top: 3%;
+    left: 43%;
+    z-index: 1;
+}
+.jesus{
+    position: absolute;
+    height: 290px;
+    width: 206px;
+    top: 320px;
+    left: 39%;
+}
+#jesus{
+    position: absolute;
+    top: 550px;
+    left: 48%;
+    z-index: 2;
+}
+.jesus:active{
+    position: absolute;
+    height: 280px;
+    width: 197px;
+    top: 324px;
+    left: 703px;
+}
+.hitler{
+    position: absolute;
+    height: 290px;
+    width: 230px;
+    top: 320px;
+    left: 56%;
+}
+.robot{
+    position: absolute;
+    height: 290px;
+    width: 280px;
+    gap: 10px;
+    top: 355px;
+    left: 71%;
+}
+.gipsyKid{
+    position: absolute;
+    height: 260px;
+    width: 220px;
+    top: 60%;
+    left: 50%;
+    rotation: 30deg;
+}
+.manic{
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    top: 60%;
+    left: 65%;
+}
+.voel {
+    position:absolute;
+    height: 50px;
+    width: 500px;
+    opacity: 90%;
+    top: 30%;
+    left: 30%;
+    z-index: auto;
+}
+.balk{
+    position: absolute;
+    left: 55px;
+    top: 950px;
+    opacity: 80%;
+    width: 1800px;
+    z-index: 2;
+}
+
+/*# sourceMappingURL=firstQuestion.49754034.css.map */

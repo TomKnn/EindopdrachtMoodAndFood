@@ -1,0 +1,34 @@
+html {
+    background:url("https://raw.githubusercontent.com/TomKnn/EindopdrachtMoodAndFood/master/assets/backgroundFinal.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    /*overflow: hidden;*/
+}
+.logo {
+    position: absolute;
+    height: 15%;
+    width: 47%;
+    top: 6%;
+    left: 48%;
+    z-index: 2;
+}
+.thoughtBox{
+    position: absolute;
+    width: 1000px;
+    top: 3%;
+    left: 45%;
+    z-index: 1;
+}
+#tijdbom{
+    position: absolute;
+    width: 280px;
+    top: 558px;
+    left: 600px;
+}
+.tijdbom{
+    position: absolute;
+    width: 280px;
+    top: 400px;
+    left: 600px;
+}
+/*# sourceMappingURL=secondQuestion.db20a9c8.css.map */
