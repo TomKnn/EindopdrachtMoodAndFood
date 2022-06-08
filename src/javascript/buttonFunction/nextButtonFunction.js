@@ -1,6 +1,7 @@
 ////////////////////////////////// NAVIGATE ENTRIES FROM HERE //////////////////////////////////
 // IMPORT recipe Array
 import {recipeByPreferenceResults} from "./javascript/fetchApiData/getRecipeByPreference";
+import axios from "axios";
 (async()=>{
     const recipeArray = await recipeByPreferenceResults;
     console.log(recipeArray);
@@ -10,7 +11,7 @@ import {recipeByPreferenceResults} from "./javascript/fetchApiData/getRecipeByPr
 // import getRecipeByCard
 
 // zet de standaard waarde op 0 om zeker te zijn dat currentItem de eerste waarde van de array is
-let defaultIndex = 0;
+let defaultIndex = recipeArray[0];
 
 // zet currentIndex op defaultIndex zodat currentIndex vanaf 0 begint te tellen
 let currentIndex = defaultIndex;
@@ -18,70 +19,97 @@ let currentIndex = defaultIndex;
 // creëer referentie naar HTML element, zodat deze in de DOM geïnjecteerd kan worden
 const currentItem = document.getElementById( "current-item" );
 
-// Inject the default index into the array and inject in the DOM
-currentItem.innerText = `${ recipeArray[defaultIndex] }`;
+// Injecteer de standaard index in de lijst en in de DOM
+//currentItem.innerText = `${ recipeArray[defaultIndex] }`;
 
-// Function adjusts the currentIndex by the direction (will run only on click):
-//      - PREVIOUS will decrease the value,
-//      - NEXT will increase the value
+// Deze functie verandert de currentIndex naar gelang de richting die geselecteerd wordt door een klik op de volgende/volgende button:
+//      - VORIGE verlaagt de waarde van currentIndex met -1
+//      - VOLGENDE verhoogt de waarde van currentIndex met +1
+
+async function getRecipeByCard(currentIndex) {
+    try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/${currentIndex}/card?apiKey=c8b8bc2e8c04457083d6d5ed821d386e`, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
+
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        currentItem.innerHTML = `
+    <img class="test" src="${recipe.url}"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 function adjustCurrentIndex(direction) {
-    // Decrease currentIndex with 1 when direction is PREVIOUS
+    // Verlaag currentIndex met 1 als direction (richting) is VORIGE
     if ( direction === "previous" ) {
-        currentIndex -= 1;
+        getRecipeByCard(currentIndex -=1)
+        // currentIndex -= 1;
     }
-    // Increase currentIndex with 1 when direction is NEXT
+    // Verhoog currentIndex met 1 als direction is VOLGENDE
     if ( direction === "next" ) {
-        currentIndex += 1;
+        getRecipeByCard(currentIndex +=1)
+        // currentIndex += 1;
     }
-    // Create attribute 'disabled' to PREVIOUS button when currentIndex is 0 or lower
+    // Creëer attribuut 'disabled' (uitgeschakeld) als currentIndex 0 is of lager
     if ( currentIndex <= 0 ) {
         buttonPrevious.setAttribute( "disabled", true );
     }
-    // Remove attribute 'disabled' to PREVIOUS button when currentIndex is above 0
+    // Creëer attribuut 'disabled'(uitgeschakeld) op VORIGE button als currentIndex boven 0 is
     if ( currentIndex > 0 ) {
         buttonPrevious.removeAttribute( "disabled", true );
     }
-    // Create attribute 'disabled' to NEXT button when currentIndex is 0 or lower
+    // Creëer attribuut 'disabled'(uitgeschakeld) op VOLGENDE button als currentIndex 0 is of lager
     if ( currentIndex >= array.length - 1 ) {
         buttonNext.setAttribute( "disabled", true );
     }
-    // Remove attribute 'disabled' to NEXT button when currentIndex is at the end of the array
+    // Verwijder attribuut 'disabled' op de VOLGENDE button als de currentIndex op het einde van de array is
     if ( currentIndex < array.length - 1 ) {
         buttonNext.removeAttribute( "disabled", true );
     }
 
-    // Adjust currentIndex with the new value
+    // Pas de currentIndex aan de nieuwe waarde
     currentItem.innerText = `${ array[currentIndex] }`;
 
 }
 
-// Create reference to HTML element, so PREVIOUS button can be executed on click
+// Creëer een referentie naar het HTML element, zodat de VORIGE button uitgevoerd kan worden met een klik
 const buttonPrevious = document.getElementById( "btn-previous" );
 
-// Event listener that will execute 'adjustCurrentIndex' function when PREVIOUS button is clicked
+// Event listener welke de 'adjustCurrentIndex' function uitvoert als op de VORIGE button wordt geklikt
 buttonPrevious.addEventListener( "click", ( e ) => {
 
-    // Prevent form from being refreshed before submitted
+    // Voorkom dat het formulier wordt ververst voordat het wordt ingediend
     e.preventDefault();
 
-    // Function will run and direction is set to PREVIOUS
+    // Functie wordt uitgevoerd en gezet op VORIGE
     adjustCurrentIndex( "previous" );
 
 } );
 
-// Disable PREVIOUS button as default
+// Schakel de VORIGE button als standaard
 buttonPrevious.setAttribute( "disabled", true );
 
-// Create reference to HTML element, so NEXT button can be executed on click
+// Creëer een referentie naar het HTML element, zodat de VOLGENDE button uitgevoerd kan worden met een klik
 const buttonNext = document.getElementById( "btn-next" );
 
-// Event listener that will execute 'adjustCurrentIndex' function when NEXT button is clicked
+// Eventlistener die 'adjustCurrentIndex' uitvoert als op de VOLGENDE button wordt geklikt
 buttonNext.addEventListener( "click", ( e ) => {
 
-    // Prevent form from being refreshed before submitted
+    // Voorkom dat het formulier wordt ververst voordat het wordt ingediend
     e.preventDefault();
 
-    // Function will run and direction is set to NEXT
+    // Functie wordt uitgevoerd en gezet op VOLGENDE
     adjustCurrentIndex( "next" );
 
 } );

@@ -521,6 +521,8 @@ function hmrAcceptRun(bundle, id) {
 },{}],"gLLPy":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 // IMPORTEER VARIABELEN
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _getRecipeByPreference = require("./javascript/fetchApiData/getRecipeByPreference");
 var _cuisineChecklist = require("./javascript/browseLists/cuisineChecklist");
 var _cuisineChecklistDefault = parcelHelpers.interopDefault(_cuisineChecklist);
@@ -535,14 +537,24 @@ var _inclusiveChecklistDefault = parcelHelpers.interopDefault(_inclusiveChecklis
 var _getRecipeByCard = require("./javascript/fetchApiData/getRecipeByCard");
 var _getRecipeByCardDefault = parcelHelpers.interopDefault(_getRecipeByCard);
 var _getRecipeByPreferenceDefault = parcelHelpers.interopDefault(_getRecipeByPreference);
-// // (async()=>{
-// //     const recipeArray= await recipeByPreferenceResults.results.data;
-// //
-// //
-// // })();
-console.log(_getRecipeByPreference.recipeByPreferenceResults);
+// const recipeIdArray = async function (){
+//   const arr = await axios(recipeByPreferenceResults);
+//   return arr.data.results.slice(0, 2).map(({id}) => id);
+//     console.log(recipeIdArray());
+// }
+// (async()=> {
+//   const arr = await recipeByPreferenceResults;
+//   const recipeArray = arr.data.results.slice(0, 2).map(({id}) => id);
+//   console.log(recipeArray); })();
+let recipeIdArray;
+(async ()=>{
+    const arr = await _getRecipeByPreference.recipeByPreferenceResults;
+    return recipeIdArray = arr.data.results.slice(0, 2).map(({ id  })=>id
+    );
+})();
+console.log(recipeIdArray);
 
-},{"./javascript/fetchApiData/getRecipeByPreference":"b9vjq","./javascript/browseLists/cuisineChecklist":"kpeEM","./javascript/browseLists/intoleranceChecklist":"3NkRb","./javascript/browseLists/inclusiveChecklist":"ewNc4","./javascript/fetchApiData/getRecipeByCard":"cTXOJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"b9vjq":[function(require,module,exports) {
+},{"./javascript/fetchApiData/getRecipeByPreference":"b9vjq","./javascript/browseLists/cuisineChecklist":"kpeEM","./javascript/browseLists/intoleranceChecklist":"3NkRb","./javascript/browseLists/inclusiveChecklist":"ewNc4","./javascript/fetchApiData/getRecipeByCard":"cTXOJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","axios":"jo6P5"}],"b9vjq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getRecipeByPreference", ()=>getRecipeByPreference
@@ -557,8 +569,21 @@ const getRecipeByPreference = async ()=>{
             "Content-Type": "application/json"
         }
     });
+// return results.data.results.slice(0, 2).map(({id}) => id);
 };
-const recipeByPreferenceResults = getRecipeByPreference(); // WERKENDE TEST API-FETCH
+const recipeByPreferenceResults = getRecipeByPreference(); // API PROBEERSEL RUSSIN
+ // fetch("https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5")
+ //     .then((response) => response.json())
+ //     .then((recipeArray) => {
+ //         console.log(recipeArray)
+ //     });
+ // const array = () => {
+ //     user.then((a) => {
+ //         console.log(a);
+ //     });
+ // };
+ // console.log(array());
+ // WERKENDE TEST API-FETCH
  // let recipeArray = async function getRecipeByPreference(){
  //     try { const results = await axios.get ('https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5',{
  //         headers:{

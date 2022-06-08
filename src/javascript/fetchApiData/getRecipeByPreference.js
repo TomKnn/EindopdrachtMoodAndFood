@@ -5,17 +5,36 @@ import axios from 'axios';
 // const sadEmojiSearch = https://api.spoonacular.com/recipes/findByNutrients?minCarbs=50&minCalories=50&minSugar=50&minSaturatedFat=55
 // const manicEmojiSearch = https://api.spoonacular.com/recipes/findByNutrients?maxCarbs=50&maxSugar=40&minMagnesium=30
 
+
+
 export const getRecipeByPreference = async () => {
     return axios.get('https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5', {
         headers: {
             "Content-Type": "application/json"
 
         }})
-
-
+        // return results.data.results.slice(0, 2).map(({id}) => id);
 
 }
+
 export const recipeByPreferenceResults = getRecipeByPreference();
+
+// API PROBEERSEL RUSSIN
+// fetch("https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5")
+//     .then((response) => response.json())
+//     .then((recipeArray) => {
+//         console.log(recipeArray)
+//     });
+
+// const array = () => {
+//     user.then((a) => {
+//         console.log(a);
+//     });
+// };
+// console.log(array());
+
+
+
 
 // WERKENDE TEST API-FETCH
 // let recipeArray = async function getRecipeByPreference(){

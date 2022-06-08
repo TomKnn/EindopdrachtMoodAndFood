@@ -1,4 +1,5 @@
 // https://spoonacular.com/food-api/docs#Get-Recipe-Card
+// npm install parcel-plugin-nuke-dist --save-dev
 // https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2
 // const recipeSearch = 'https://api.spoonacular.com/recipes/complexSearch?';
 // https://api.spoonacular.com/recipes/complexSearch?cuisine=african&intolerances=gluten&includeIngredients=bellPepper&maxReadyTime=20&number

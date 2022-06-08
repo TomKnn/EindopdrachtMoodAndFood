@@ -1,13 +1,25 @@
 // IMPORTEER VARIABELEN
+import axios from 'axios';
 import {recipeByPreferenceResults} from "./javascript/fetchApiData/getRecipeByPreference";
-recipeByPreferenceResults;
-// // (async()=>{
-// //     const recipeArray= await recipeByPreferenceResults.results.data;
-// //
-// //
-// // })();
-console.log(recipeByPreferenceResults);
 
+
+// const recipeIdArray = async function (){
+//   const arr = await axios(recipeByPreferenceResults);
+//   return arr.data.results.slice(0, 2).map(({id}) => id);
+//     console.log(recipeIdArray());
+// }
+
+// (async()=> {
+//   const arr = await recipeByPreferenceResults;
+//   const recipeArray = arr.data.results.slice(0, 2).map(({id}) => id);
+//   console.log(recipeArray); })();
+
+let recipeIdArray;
+(async()=> {
+  const arr = await recipeByPreferenceResults;
+  return recipeIdArray = arr.data.results.slice(0, 2).map(({id}) => id);
+  })();
+console.log(recipeIdArray);
 
 
 
