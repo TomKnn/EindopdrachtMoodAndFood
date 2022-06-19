@@ -24,6 +24,12 @@ let recipeIdArray;
   //you won't be able to access recipe ids here, as you need to "await" for them to be returned 
 console.log(recipeIdArray);
 
+//OR
+getRecipeByPreferenceAPI().then(ids => {
+//and then pass these ids to the next function
+  console.log('IDS', ids);
+})
+
 
 
 
