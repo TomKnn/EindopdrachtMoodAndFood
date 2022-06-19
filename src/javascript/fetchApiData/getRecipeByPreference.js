@@ -7,17 +7,23 @@ import axios from 'axios';
 
 
 
-export const getRecipeByPreference = async () => {
-    return axios.get('https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5', {
+export const getRecipeByPreferenceAPI = async () => {
+    const res = await axios.get('https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5', {
         headers: {
             "Content-Type": "application/json"
+        }});
+        const ids = res.data.results.map(({id}) => id);
+        return ids;
+    // return axios.get('https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5', {
+    //     headers: {
+    //         "Content-Type": "application/json"
 
-        }})
+    //     }})
         // return results.data.results.slice(0, 2).map(({id}) => id);
 
 }
 
-export const recipeByPreferenceResults = getRecipeByPreference();
+// export const recipeByPreferenceResults = getRecipeByPreference();
 
 // API PROBEERSEL RUSSIN
 // fetch("https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5")

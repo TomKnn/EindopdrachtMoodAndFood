@@ -1,6 +1,7 @@
 // IMPORTEER VARIABELEN
 import axios from 'axios';
 import {recipeByPreferenceResults} from "./javascript/fetchApiData/getRecipeByPreference";
+import {getRecipeByPreferenceAPI} from "./javascript/fetchApiData/getRecipeByPreference";
 
 
 // const recipeIdArray = async function (){
@@ -16,10 +17,19 @@ import {recipeByPreferenceResults} from "./javascript/fetchApiData/getRecipeByPr
 
 let recipeIdArray;
 (async()=> {
-  const arr = await recipeByPreferenceResults;
-  return recipeIdArray = arr.data.results.slice(0, 2).map(({id}) => id);
+  const ids = await getRecipeByPreferenceAPI()
+  console.log('RECIPE IDS', ids);
+  //you can access recipe ids here and pass them as a param to the next function
   })();
+  //you won't be able to access recipe ids here, as you need to "await" for them to be returned 
 console.log(recipeIdArray);
+
+//OR
+getRecipeByPreferenceAPI().then(ids => {
+//and then pass these ids to the next function
+  console.log('IDS', ids);
+})
+
 
 
 
