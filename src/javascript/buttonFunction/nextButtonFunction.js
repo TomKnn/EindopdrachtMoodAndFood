@@ -2,6 +2,7 @@
 // IMPORT recipe Array
 import {recipeByPreferenceResults} from "./javascript/fetchApiData/getRecipeByPreference";
 import axios from "axios";
+
 (async()=>{
     const recipeArray = await recipeByPreferenceResults;
     console.log(recipeArray);

@@ -6,17 +6,20 @@ html {
 }
 .logo {
     position: absolute;
-    height: 15%;
-    width: 47%;
-    top: 6%;
+    max-width:47%;
+    height: auto;
+    width: auto;
+    top: 8%;
     left: 48%;
     z-index: 2;
 }
 .thoughtBox{
     position: absolute;
-    width: 1100px;
+    max-width: 100%;
+    height: auto;
+    width: auto;
     top: 3%;
-    left: 40%;
+    left: 34%;
     z-index: auto;
 }
 .contactAdres{

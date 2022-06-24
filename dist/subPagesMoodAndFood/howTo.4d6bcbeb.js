@@ -2568,4 +2568,4 @@ var _getRecipeByPreferenceDefault = parcelHelpers.interopDefault(_getRecipeByPre
 
 },{"axios":"jo6P5","./getRecipeByPreference":"b9vjq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["fcvSp","gLLPy"], "gLLPy", "parcelRequire0b5b")
 
-//# sourceMappingURL=result.4d6bcbeb.js.map
+//# sourceMappingURL=howTo.4d6bcbeb.js.map

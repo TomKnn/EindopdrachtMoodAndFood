@@ -6,39 +6,44 @@ html {
 }
 .logo {
     position: absolute;
-    height: 229px;
-    width: 360px;
+    max-width: 20%;
+    width: auto;
+    height: auto;
     top: 100px;
-    left: 60px;
+    left: 31px;
     z-index: 2;
 }
 .block{
     position: absolute;
-    height: 1070px;
-    width: 400px;
-    left: 2%;
+    max-width: 21%;
+    height:auto;
+    width: auto;
     top: 0%;
+    left: 1%;
     opacity: 70%;
     z-index: -1;
 }
 .howToBig{
     position: absolute;
-    left:24%;
-    top:10%;
-    height:70px;
-    width: 359px;
+    max-width: 20%;
+    height:auto;
+    width: auto;
+    left:23%;
+    top:20%;
 }
 .tekst{
     position: absolute;
-    left:43%;
-    top:10%;
-    height:200px;
-    width: 901px;
+    max-width: 40%;
+    height:auto;
+    width: auto;
+    left:44%;
+    top:9%;
 }
 .kader{
     position: absolute;
+    max-width: 50%;
+    height:auto;
+    width: auto;
     left:22%;
     top: 32%;
-    height: 670px;
-    width: 1450px;
 }

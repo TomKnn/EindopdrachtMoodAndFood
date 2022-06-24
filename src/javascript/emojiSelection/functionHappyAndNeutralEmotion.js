@@ -13,19 +13,19 @@ const averageTimeSearch = 'maxReadyTime=30';
 const hasteSearch = 'maxReadyTime=15';
 
 
-
-contentEmojiChecked.addEventListener('mouseover', test);
-function test (e){
-    e.preventDefault();
-    console.log ('test');
-}
-
-neutralEmojiChecked.addEventListener('mouseover',test);
-function getContentAndNeutralEndpoint(){
-    if (contentEmojiChecked && noHurrySearch) {
-        getRecipeByPreference()
-    }
-}
+//
+// contentEmojiChecked.addEventListener('mouseover', test);
+// function test (e){
+//     e.preventDefault();
+//     console.log ('test');
+// }
+//
+// neutralEmojiChecked.addEventListener('mouseover',test);
+// function getContentAndNeutralEndpoint(){
+//     if (contentEmojiChecked && noHurrySearch) {
+//         getRecipeByPreference()
+//     }
+// }
 
 
 

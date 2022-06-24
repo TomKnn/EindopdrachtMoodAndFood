@@ -5,19 +5,40 @@ import axios from 'axios';
 // const sadEmojiSearch = https://api.spoonacular.com/recipes/findByNutrients?minCarbs=50&minCalories=50&minSugar=50&minSaturatedFat=55
 // const manicEmojiSearch = https://api.spoonacular.com/recipes/findByNutrients?maxCarbs=50&maxSugar=40&minMagnesium=30
 
-
-
-export const getRecipeByPreference = async () => {
-    return axios.get('https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5', {
+export const getRecipeByPreferenceAPI = async () => {
+    const res = await axios.get('https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5', {
         headers: {
             "Content-Type": "application/json"
+        }});
+    const ids = res.data.results.map(({id}) => id);
+    return ids;}
 
-        }})
-        // return results.data.results.slice(0, 2).map(({id}) => id);
 
-}
+// const getRecipes = async () => {
+//     fetch("https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5")
+//         .then((response) => response.json())
+//         .then((user) => {
+//             const recipes = user.results.map(result => result.id)
+//
+//             return recipes
+//         });
+// }
+//
+// const recipes = await getRecipes();
+// console.log(recipes);
 
-export const recipeByPreferenceResults = getRecipeByPreference();
+
+// export const getRecipeByPreference = async () => {
+//     return axios.get('https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5', {
+//         headers: {
+//             "Content-Type": "application/json"
+//
+//         }})
+//         // return results.data.results.slice(0, 2).map(({id}) => id);
+//
+// }
+//
+// export const recipeByPreferenceResults = getRecipeByPreference();
 
 // API PROBEERSEL RUSSIN
 // fetch("https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5")
@@ -37,16 +58,16 @@ export const recipeByPreferenceResults = getRecipeByPreference();
 
 
 // WERKENDE TEST API-FETCH
-// let recipeArray = async function getRecipeByPreference(){
+// async function getRecipeByPreference(){
 //     try { const results = await axios.get ('https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5',{
 //         headers:{
 //             "Content-Type": "application/json"
 //         }
 //     })
-//         // const resultsSelection = results.data.results.slice(0,5);
+//         const resultsSelection = results.data
 //
 //
-//         return recipeArray = results.data.results.slice(0, 2).map(({id}) => id);
+//         // return recipeArray = results.data.results.slice(0, 2).map(({id}) => id);
 //
 //     } catch (e) {
 //         console.error(e);
