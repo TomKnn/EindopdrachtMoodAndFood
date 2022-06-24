@@ -1,0 +1,319 @@
+html {
+    background:url(https://raw.githubusercontent.com/TomKnn/EindopdrachtMoodAndFood/master/assets/backgroundFinal.png) no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+.logo {
+    position: absolute;
+    max-width:47%;
+    height: auto;
+    width: auto;
+    top: 8%;
+    left: 48%;
+    z-index: 2;
+}
+.olive{
+    position: absolute;
+    max-width:18%;
+    height: auto;
+    width: auto;
+    top: 19%;
+    left: 68%;
+    z-index: 2;
+}
+.thoughtBox{
+    position: absolute;
+    max-width: 99%;
+    height: auto;
+    width: auto;
+    top: 3%;
+    left: 46%;
+    z-index: auto;
+}
+.jesus{
+    position: absolute;
+    /*height: 290px;*/
+    /*width: 206px;*/
+    top: 37%;
+    left: 12%;
+    max-width: 11%;
+    height: auto;
+    width: auto;
+}
+.jesus:active{
+    position: absolute;
+    max-width: 10%;
+    height: auto;
+    width: auto;
+    top: 37%;
+    left: 10%;
+}
+#jesus{
+    position: absolute;
+    top: 50%;
+    left: 18%;
+    z-index: 2;
+}
+
+.hitler{
+    position: absolute;
+    max-width: 12%;
+    /*height: 100px;*/
+    height: auto;
+    width: auto;
+    top: 36%;
+    left: 30%;
+}
+.hitler:active{
+    position: absolute;
+    max-width: 11%;
+    height: auto;
+    width: auto;
+    top: 36%;
+    left: 30%;
+}
+#hitler{
+    position: absolute;
+    height: auto;
+    width: auto;
+    top: 50%;
+    left: 34%;
+}
+.robot{
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 16%;
+    top: 39%;
+    left: 45%;
+}
+.robot:active{
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 15%;
+    top: 39%;
+    left: 44%;
+}
+#robot{
+    position: absolute;
+    max-width: 16%;
+    top: 50%;
+    left: 53%;
+}
+.gypsyKid{
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 12%;
+    top: 40%;
+    left: 65%;
+    rotation: 30deg;
+    z-index: 2;
+}
+.gypsyKid:active{
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 11%;
+    top: 40%;
+    left: 65%;
+    rotation: 30deg;
+    z-index: 2;
+}
+#gypsyKid{
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    z-index: 2;
+}
+.manic{
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 15%;
+    opacity: 90%;
+    top: 41%;
+    left: 80%;
+    z-index: 2;
+}
+.manic:active{
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 14%;
+    opacity: 90%;
+    top: 41%;
+    left: 80%;
+    z-index: 2;
+}
+#manic{
+    position: absolute;
+    top: 50%;
+    left: 87%;
+    z-index: 2;
+}
+.chillDude{
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 12%;
+    top: 66%;
+    left: 22%;
+}
+.chillDude:active{
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 11%;
+    top: 66%;
+    left: 22%;
+}
+#chillDude{
+    position: absolute;
+    top: 70%;
+    left: 27%;
+}
+.wekker{
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 12%;
+    top: 66%;
+    left: 46%;
+}
+.wekker:active{
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 11%;
+    top: 66%;
+    left: 46%;
+}
+#wekker{
+    position: absolute;
+    top: 70%;
+    left: 51%;
+}
+.timebomb{
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 15%;
+    top: 67%;
+    left: 68%;
+}
+.timebomb:active{
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 14%;
+    top: 67%;
+    left: 68%;
+}
+#timebomb{
+    position: absolute;
+    top: 77%;
+    left: 74%;
+}
+
+.voel {
+    position:absolute;
+    height: auto;
+    width: auto;
+    max-width: 30%;
+    opacity: 90%;
+    top: 28%;
+    left: 20%;
+    z-index: auto;
+}
+.kader {
+    position: absolute;
+    opacity: 64%;
+    top: 477px;
+    left: 118px;
+    z-index: 2;
+}
+.howTo{
+    position:absolute;
+    height: 50px;
+    width: 150px;
+    top: 200px;
+    left: 400px;
+
+}
+.howToStart{
+    position: absolute;
+    max-width: 12%;
+    height: auto;
+    width: auto;
+    top: 557px;
+    left: 166px;
+    z-index: 2;
+}
+.browse{
+    position: absolute;
+    max-width: 50%;
+    height: auto;
+    width: auto;
+    top: 677px;
+    left: 165px;
+    z-index: 2;
+}
+.contact{
+    position: absolute;
+    max-width: 50%;
+    height: auto;
+    width: auto;
+    top: 795px;
+    left: 165px;
+    z-index: 2;
+}
+.balk{
+    position: absolute;
+    max-width: 95%;
+    height: auto;
+    width: auto;
+    left: 55px;
+    top: 960px;
+    opacity: 65%;
+    /*width: 1800px;*/
+    z-index: 1;
+}
+.copyright2022{
+    position: absolute;
+    max-width: 8%;
+    height: auto;
+    width: auto;
+    left: 5%;
+    top: 91%;
+    opacity: 30%;
+    z-index: 2;
+}
+.copyrightMoodAndFood{
+    position: absolute;
+    max-width: 12%;
+    height: auto;
+    width: auto;
+    left: 43%;
+    top: 91%;
+    opacity: 30%;
+    z-index: 2;
+}
+.copyrightDesign{
+    position: absolute;
+    max-width: 12%;
+    height: auto;
+    width: auto;
+    left: 82%;
+    top: 90%;
+    opacity: 30%;
+    z-index: 2;
+}
+#test{
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+}
