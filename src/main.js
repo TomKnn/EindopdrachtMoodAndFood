@@ -1,43 +1,6 @@
 // IMPORTEER VARIABELEN
 import axios from 'axios';
 const container = document.getElementById('result');
-import {getRecipeByPreferenceAPI} from "./javascript/fetchApiData/getRecipeByPreference";
-
-
-getRecipeByPreferenceAPI().then(ids => {
-return ids;
-  // console.log('IDS', ids);
-})
-const ids = [];
-console.log(ids);
-
-// const recipeIdArray = async function (){
-//   const arr = await axios(recipeByPreferenceResults);
-//   return arr.data.results.slice(0, 2).map(({id}) => id);
-//     console.log(recipeIdArray());
-// }
-
-// (async()=> {
-//   const arr = await recipeByPreferenceResults;
-//   const recipeArray = arr.data.results.slice(0, 2).map(({id}) => id);
-//   console.log(recipeArray); })();
-
-// let recipeIdArray;
-// (async()=> {
-//   const arr = await recipeByPreferenceResults;
-//   return recipeIdArray = arr.data.results.slice(0, 2).map(({id}) => id);
-//   })();
-// console.log(recipeIdArray);
-
-
-
-
-import cuisineChecklist from "./javascript/browseLists/cuisineChecklist";
-import intoleranceChecklist from "./javascript/browseLists/intoleranceChecklist";
-import inclusiveChecklist from "./javascript/browseLists/inclusiveChecklist";
-// import maxReadyTimeChecklist from "./javascript/browseLists/maxReadyTimeChecklist;
-import createCuisineChecklist from "./javascript/browseLists/cuisineChecklist";
-// import insertFirstImageRow from "./javascript/insertEmojiImages/insertImagesQuestions";
 
 
 // IMPORTEER FUNCTIES EMOJI SELECTIE
@@ -47,18 +10,14 @@ import createCuisineChecklist from "./javascript/browseLists/cuisineChecklist";
 
 // IMPORTEER fetchApiData
 
-import getRecipeByCard from "./javascript/fetchApiData/getRecipeByCard";
-import getRecipeByPreference from "./javascript/fetchApiData/getRecipeByPreference";
-import recipeArray from "./javascript/fetchApiData/getRecipeByPreference";
-// import createCuisineChecklist from "./javascript/browseLists/cuisineChecklist";
+// import getRecipeByCard from "./javascript/fetchApiData/getRecipeByCard";
+
 
 
 // INJECTEREN CHECKLISTEN BROWSE.HTML
 
 // cuisineChecklist;
-// intoleranceChecklist;
-// inclusiveChecklist;
-// maxReadyTimeChecklist;
+
 
 
 // FUNCTIES CHECKLIJSTEN BROWSE.HTML CREËREN
@@ -69,16 +28,7 @@ import recipeArray from "./javascript/fetchApiData/getRecipeByPreference";
 // FUNCTIES AANROEPEN
 
 
-// getRecipeByCard();
-// createRecipeArray();
-
-// console.log(arrayForRecipeCard);
-
-// createCuisineChecklist();
-
-// TIJDELIJKE CODE TRY-OUT
-
-
+// Image/checkboxes van click functie voorzien
 const jesus = document.getElementById('jesus')
 jesus.addEventListener('click', function(){
   console.log('test')
@@ -119,31 +69,42 @@ timebomb.addEventListener('click',function (){
   console.log('test8')
 })
 
-
-// const button = document.getElementById('button')
-// button.addEventListener('click', function(){})
-
-  // const image = document.createElement('p')
-//         const title = document.createElement('h3')
-//
-//         title.innerHTML =  `<h3>${recipe[0].title}</h3>`
-//         image.innerHTML = `<img src="${recipe[0].image}"/>`
-//
-//          container.appendChild(title)
-//         container.appendChild(image)
-
-//   <div className="container">
-//     <img src="img_snow.jpg" alt="Snow">
-//       <button className="btn">Button</button>
-//   </div>
-
+// If statement op de resultaatbutton plaatsen en voor elke combinatie een recipeCard aanroepen en in beeld brengen
 const button = document.getElementById('button')
 button.addEventListener('click', function(){
   if(jesus.checked === true && chillDude.checked === true){
 
-    async function getRecipeByPreference(){
+    async function getRecipeByCard(){
       try {
-        const result = await axios.get(`https://api.spoonacular.com/recipes/716426/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/716426/card?apiKey=d45e55edd78244c0913a0316171a6f71`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+
+        image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    
+    `
+
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }
+  if(jesus.checked === true && wekker.checked === true){
+
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/716408/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
           headers: {
             "Content-Type": "application/json"
           }
@@ -156,7 +117,7 @@ button.addEventListener('click', function(){
         //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
         image.innerHTML = `
         
-    <img src="${recipe.url}"/>
+    <img src="${recipe.url}" class="recipeCard"/>
     `
         // // container.appendChild(title)
         container.appendChild(image)
@@ -165,46 +126,374 @@ button.addEventListener('click', function(){
         console.error(e);
       }
     }
+    getRecipeByCard();
 
+  }if(jesus.checked === true && timebomb.checked === true){
 
-    getRecipeByPreference();
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/715495/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
 
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
 
-  } else{
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }if(hitler.checked === true && chillDude.checked === true){
+
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/640601/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
+
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }if(hitler.checked === true && wekker.checked === true){
+
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/656819/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
+
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }if(hitler.checked === true && timebomb.checked === true){
+
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/636326/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
+
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        image.innerHTML = `
+        
+   <img src="${recipe.url}" class="recipeCard"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }if(robot.checked === true && chillDude.checked === true){
+
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/632426/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
+
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }if(robot.checked === true && wekker.checked === true){
+
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/1697683/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
+
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }if(robot.checked === true && timebomb.checked === true){
+
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/660525/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
+
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }if(gypsyKid.checked === true && chillDude.checked === true){
+
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/639203/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
+
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        image.innerHTML = `
+        
+   <img src="${recipe.url}" class="recipeCard"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }if(gypsyKid.checked === true && wekker.checked === true){
+
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/655491/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
+
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }if(gypsyKid.checked === true && timebomb.checked === true){
+
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/649596/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
+
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        image.innerHTML = `
+        
+   <img src="${recipe.url}" class="recipeCard"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }if(manic.checked === true && chillDude.checked === true){
+
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/644167/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
+
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }if(manic.checked === true && wekker.checked === true){
+
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/716195/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
+
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }if(manic.checked === true && timebomb.checked === true){
+
+    async function getRecipeByCard(){
+      try {
+        const result = await axios.get(`https://api.spoonacular.com/recipes/644826/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        const recipe = result.data;
+
+        const image = document.createElement('p')
+        // const title = document.createElement('h3')
+
+        //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+        image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `
+        // // container.appendChild(title)
+        container.appendChild(image)
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    getRecipeByCard();
+
+  }
+  else{
     console.log('niet gelukt')
   }
 })
-// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup
-// <div class="popup" onclick="myFunction()">Click me!
-// <span class="popuptext" id="myPopup">Popup text...</span>
-// </div>
-//
-//     Example
-//         /* Popup container */
-//         .popup {
-//   position: relative;
-//   display: inline-block;
-//   cursor: pointer;
-// }
-//
-// /* The actual popup (appears on top) */
-// .popup .popuptext {
-//   visibility: hidden;
-//   width: 160px;
-//   background-color: #555;
-//   color: #fff;
-//   text-align: center;
-//   border-radius: 6px;
-//   padding: 8px 0;
-//   position: absolute;
-//   z-index: 1;
-//   bottom: 125%;
-//   left: 50%;
-//   margin-left: -80px;
-// }
-
-
-
-
-
-

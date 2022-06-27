@@ -523,56 +523,17 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 // IMPORTEER VARIABELEN
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _getRecipeByPreference = require("./javascript/fetchApiData/getRecipeByPreference");
-// const recipeIdArray = async function (){
-//   const arr = await axios(recipeByPreferenceResults);
-//   return arr.data.results.slice(0, 2).map(({id}) => id);
-//     console.log(recipeIdArray());
-// }
-// (async()=> {
-//   const arr = await recipeByPreferenceResults;
-//   const recipeArray = arr.data.results.slice(0, 2).map(({id}) => id);
-//   console.log(recipeArray); })();
-// let recipeIdArray;
-// (async()=> {
-//   const arr = await recipeByPreferenceResults;
-//   return recipeIdArray = arr.data.results.slice(0, 2).map(({id}) => id);
-//   })();
-// console.log(recipeIdArray);
-var _cuisineChecklist = require("./javascript/browseLists/cuisineChecklist");
-var _cuisineChecklistDefault = parcelHelpers.interopDefault(_cuisineChecklist);
-var _intoleranceChecklist = require("./javascript/browseLists/intoleranceChecklist");
-var _intoleranceChecklistDefault = parcelHelpers.interopDefault(_intoleranceChecklist);
-var _inclusiveChecklist = require("./javascript/browseLists/inclusiveChecklist");
-var _inclusiveChecklistDefault = parcelHelpers.interopDefault(_inclusiveChecklist);
-// import insertFirstImageRow from "./javascript/insertEmojiImages/insertImagesQuestions";
+const container = document.getElementById('result');
 // IMPORTEER FUNCTIES EMOJI SELECTIE
 // import getHappyAndNeutralEndpoint from ".javascript/emojiSelection/functionHappyAndNeutralEmotion";
 // IMPORTEER fetchApiData
-var _getRecipeByCard = require("./javascript/fetchApiData/getRecipeByCard");
-var _getRecipeByCardDefault = parcelHelpers.interopDefault(_getRecipeByCard);
-var _getRecipeByPreferenceDefault = parcelHelpers.interopDefault(_getRecipeByPreference);
-const container = document.getElementById('result');
-_getRecipeByPreference.getRecipeByPreferenceAPI().then((ids1)=>{
-    return ids1;
-// console.log('IDS', ids);
-});
-const ids = [];
-console.log(ids);
-// import createCuisineChecklist from "./javascript/browseLists/cuisineChecklist";
+// import getRecipeByCard from "./javascript/fetchApiData/getRecipeByCard";
 // INJECTEREN CHECKLISTEN BROWSE.HTML
 // cuisineChecklist;
-// intoleranceChecklist;
-// inclusiveChecklist;
-// maxReadyTimeChecklist;
 // FUNCTIES CHECKLIJSTEN BROWSE.HTML CREËREN
 // createCuisineChecklist();
 // FUNCTIES AANROEPEN
-// getRecipeByCard();
-// createRecipeArray();
-// console.log(arrayForRecipeCard);
-// createCuisineChecklist();
-// TIJDELIJKE CODE TRY-OUT
+// Image/checkboxes van click functie voorzien
 const jesus = document.getElementById('jesus');
 jesus.addEventListener('click', function() {
     console.log('test');
@@ -605,26 +566,35 @@ const timebomb = document.getElementById('timebomb');
 timebomb.addEventListener('click', function() {
     console.log('test8');
 });
-// const button = document.getElementById('button')
-// button.addEventListener('click', function(){})
-// const image = document.createElement('p')
-//         const title = document.createElement('h3')
-//
-//         title.innerHTML =  `<h3>${recipe[0].title}</h3>`
-//         image.innerHTML = `<img src="${recipe[0].image}"/>`
-//
-//          container.appendChild(title)
-//         container.appendChild(image)
-//   <div className="container">
-//     <img src="img_snow.jpg" alt="Snow">
-//       <button className="btn">Button</button>
-//   </div>
+// If statement op de resultaatbutton plaatsen en voor elke combinatie een recipeCard aanroepen en in beeld brengen
 const button = document.getElementById('button');
 button.addEventListener('click', function() {
     if (jesus.checked === true && chillDude.checked === true) {
-        async function getRecipeByPreference() {
+        async function getRecipeByCard() {
             try {
-                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/716426/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/716426/card?apiKey=d45e55edd78244c0913a0316171a6f71`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    
+    `;
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
+    }
+    if (jesus.checked === true && wekker.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/716408/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
                     headers: {
                         "Content-Type": "application/json"
                     }
@@ -635,7 +605,7 @@ button.addEventListener('click', function() {
                 //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
                 image.innerHTML = `
         
-    <img src="${recipe.url}"/>
+    <img src="${recipe.url}" class="recipeCard"/>
     `;
                 // // container.appendChild(title)
                 container.appendChild(image);
@@ -643,39 +613,323 @@ button.addEventListener('click', function() {
                 console.error(e);
             }
         }
-        getRecipeByPreference();
+        getRecipeByCard();
+    }
+    if (jesus.checked === true && timebomb.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/715495/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                // const title = document.createElement('h3')
+                //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+                image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `;
+                // // container.appendChild(title)
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
+    }
+    if (hitler.checked === true && chillDude.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/640601/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                // const title = document.createElement('h3')
+                //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+                image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `;
+                // // container.appendChild(title)
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
+    }
+    if (hitler.checked === true && wekker.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/656819/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                // const title = document.createElement('h3')
+                //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+                image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `;
+                // // container.appendChild(title)
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
+    }
+    if (hitler.checked === true && timebomb.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/636326/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                // const title = document.createElement('h3')
+                //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+                image.innerHTML = `
+        
+   <img src="${recipe.url}" class="recipeCard"/>
+    `;
+                // // container.appendChild(title)
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
+    }
+    if (robot.checked === true && chillDude.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/632426/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                // const title = document.createElement('h3')
+                //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+                image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `;
+                // // container.appendChild(title)
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
+    }
+    if (robot.checked === true && wekker.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/1697683/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                // const title = document.createElement('h3')
+                //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+                image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `;
+                // // container.appendChild(title)
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
+    }
+    if (robot.checked === true && timebomb.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/660525/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                // const title = document.createElement('h3')
+                //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+                image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `;
+                // // container.appendChild(title)
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
+    }
+    if (gypsyKid.checked === true && chillDude.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/639203/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                // const title = document.createElement('h3')
+                //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+                image.innerHTML = `
+        
+   <img src="${recipe.url}" class="recipeCard"/>
+    `;
+                // // container.appendChild(title)
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
+    }
+    if (gypsyKid.checked === true && wekker.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/655491/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                // const title = document.createElement('h3')
+                //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+                image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `;
+                // // container.appendChild(title)
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
+    }
+    if (gypsyKid.checked === true && timebomb.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/649596/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                // const title = document.createElement('h3')
+                //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+                image.innerHTML = `
+        
+   <img src="${recipe.url}" class="recipeCard"/>
+    `;
+                // // container.appendChild(title)
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
+    }
+    if (manic.checked === true && chillDude.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/644167/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                // const title = document.createElement('h3')
+                //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+                image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `;
+                // // container.appendChild(title)
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
+    }
+    if (manic.checked === true && wekker.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/716195/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                // const title = document.createElement('h3')
+                //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+                image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `;
+                // // container.appendChild(title)
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
+    }
+    if (manic.checked === true && timebomb.checked === true) {
+        async function getRecipeByCard() {
+            try {
+                const result = await _axiosDefault.default.get(`https://api.spoonacular.com/recipes/644826/card?apiKey=b4408aa9ab144e47ae2bf8eff93e72f5`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                const recipe = result.data;
+                const image = document.createElement('p');
+                // const title = document.createElement('h3')
+                //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
+                image.innerHTML = `
+        
+    <img src="${recipe.url}" class="recipeCard"/>
+    `;
+                // // container.appendChild(title)
+                container.appendChild(image);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getRecipeByCard();
     } else console.log('niet gelukt');
-}) // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup
- // <div class="popup" onclick="myFunction()">Click me!
- // <span class="popuptext" id="myPopup">Popup text...</span>
- // </div>
- //
- //     Example
- //         /* Popup container */
- //         .popup {
- //   position: relative;
- //   display: inline-block;
- //   cursor: pointer;
- // }
- //
- // /* The actual popup (appears on top) */
- // .popup .popuptext {
- //   visibility: hidden;
- //   width: 160px;
- //   background-color: #555;
- //   color: #fff;
- //   text-align: center;
- //   border-radius: 6px;
- //   padding: 8px 0;
- //   position: absolute;
- //   z-index: 1;
- //   bottom: 125%;
- //   left: 50%;
- //   margin-left: -80px;
- // }
-;
+});
 
-},{"axios":"jo6P5","./javascript/fetchApiData/getRecipeByPreference":"b9vjq","./javascript/browseLists/cuisineChecklist":"kpeEM","./javascript/browseLists/intoleranceChecklist":"3NkRb","./javascript/browseLists/inclusiveChecklist":"ewNc4","./javascript/fetchApiData/getRecipeByCard":"cTXOJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
+},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -2239,268 +2493,7 @@ var utils = require('./../utils');
     return utils.isObject(payload) && payload.isAxiosError === true;
 };
 
-},{"./../utils":"5By4s"}],"b9vjq":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getRecipeByPreferenceAPI", ()=>getRecipeByPreferenceAPI
-);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-const getRecipeByPreferenceAPI = async ()=>{
-    const res = await _axiosDefault.default.get('https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5', {
-        headers: {
-            "Content-Type": "application/json"
-        }
-    });
-    const ids = res.data.results.map(({ id  })=>id
-    );
-    return ids;
-} // const getRecipes = async () => {
- //     fetch("https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5")
- //         .then((response) => response.json())
- //         .then((user) => {
- //             const recipes = user.results.map(result => result.id)
- //
- //             return recipes
- //         });
- // }
- //
- // const recipes = await getRecipes();
- // console.log(recipes);
- // export const getRecipeByPreference = async () => {
- //     return axios.get('https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5', {
- //         headers: {
- //             "Content-Type": "application/json"
- //
- //         }})
- //         // return results.data.results.slice(0, 2).map(({id}) => id);
- //
- // }
- //
- // export const recipeByPreferenceResults = getRecipeByPreference();
- // API PROBEERSEL RUSSIN
- // fetch("https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5")
- //     .then((response) => response.json())
- //     .then((recipeArray) => {
- //         console.log(recipeArray)
- //     });
- // const array = () => {
- //     user.then((a) => {
- //         console.log(a);
- //     });
- // };
- // console.log(array());
- // WERKENDE TEST API-FETCH
- // async function getRecipeByPreference(){
- //     try { const results = await axios.get ('https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5',{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         const resultsSelection = results.data
- //
- //
- //         // return recipeArray = results.data.results.slice(0, 2).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- // console.log(recipeArray());
- // VANAF HIER API FETCH PER EMOJI COMBINATIE
- // haal resultaten op voor contentEmoji en noHurryEmoji selectie
- // async function getRecipesForContentEmojiAndNoHurry(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${contentEmojiSearch,noHurrySearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- //
- // async function getRecipesForContentEmojiAndAverageTime(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${contentEmojiSeach,averageTimeSearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- //
- // async function getRecipesForContentEmojiAndHaste(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${contentEmojiSeach,hasteSearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- //
- // async function getRecipesForAngryEmojiAndNoHurry(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${angryEmojiSeach,noHurrySearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- // async function getRecipesForAngryEmojiAndAverageTime(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${angryEmojiSeach,averageTimeSearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- //
- // async function getRecipesForAngryEmojiAndHaste(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${angryEmojiSeach,hasteSearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- // async function getRecipesForNeutralEmojiAndNoHurry(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${neutralEmojiSeach,noHurrySearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- // async function getRecipesForNeutralEmojiAndAverageTime(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${neutralEmojiSeach,averageTimeSearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- //
- // async function getRecipesForNeutralEmojiAndHaste(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${neutralEmojiSeach,hasteSearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- // async function getRecipesForSadEmojiAndNoHurry(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${sadEmojiSeach,noHurrySearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- // async function getRecipesForSadEmojiAndAverageTime(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${sadEmojiSeach,averageTimeSearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- //
- // async function getRecipesForSadEmojiAndHaste(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${SadEmojiSeach,hasteSearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- //
- // async function getRecipesForManicEmojiAndNoHurry(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${manicEmojiSeach,noHurrySearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- // async function getRecipesForManicEmojiAndAverageTime(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${manicEmojiSeach,averageTimeSearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- //
- // async function getRecipesForManicEmojiAndHaste(){
- //     try { const results = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?${manicEmojiSeach,hasteSearch}number=5&apiKey=c8b8bc2e8c04457083d6d5ed821d386e`,{
- //         headers:{
- //             "Content-Type": "application/json"
- //         }
- //     })
- //         return results.data.results.slice(0, 5).map(({id}) => id);
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- // export default {getRecipesForContentEmojiAndNoHurry,getRecipesForContentEmojiAndAverageTime,getRecipesForContentEmojiAndHaste,getRecipesForAngryEmojiAndNoHurry,getRecipesForAngryEmojiAndAverageTime,getRecipesForAngryEmojiAndHaste,getRecipesForNeutralEmojiAndNoHurry,getRecipesForNeutralEmojiAndAverageTime,getRecipesForNeutralEmojiAndHaste,getRecipesForSadEmojiAndNoHurry,getRecipesForSadEmojiAndAverageTime,getRecipesForSadEmojiAndHaste,getRecipesForManicEmojiAndNoHurry,getRecipesForManicEmojiAndAverageTime,getRecipesForManicEmojiAndHaste}
-;
-
-},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"./../utils":"5By4s"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -2530,42 +2523,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"kpeEM":[function(require,module,exports) {
+},{}]},["fcvSp","gLLPy"], "gLLPy", "parcelRequire0b5b")
 
-},{}],"3NkRb":[function(require,module,exports) {
-
-},{}],"ewNc4":[function(require,module,exports) {
-
-},{}],"cTXOJ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _getRecipeByPreference = require("./getRecipeByPreference"); // async function getRecipeByCard() {
- //     try {
- //         const result = await axios.get(`https://api.spoonacular.com/recipes/716426/card?apiKey=c8b8bc2e8c04457083d6d5ed821d386e`, {
- //             headers: {
- //                 "Content-Type": "application/json"
- //             }
- //         })
- //         const recipe = result.data;
- //
- //         const image = document.createElement('p')
- //         // const title = document.createElement('h3')
- //
- //         //title.innerHTML =  `<h3>${recipe.results[5].title}</h3>`
- //         image.innerHTML = `
- //     <img class="test" src="${recipe.url}"/>
- //     `
- //         // // container.appendChild(title)
- //         container.appendChild(image)
- //
- //     } catch (e) {
- //         console.error(e);
- //     }
- // }
- // export default getRecipeByCard;
-var _getRecipeByPreferenceDefault = parcelHelpers.interopDefault(_getRecipeByPreference);
-
-},{"axios":"jo6P5","./getRecipeByPreference":"b9vjq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["fcvSp","gLLPy"], "gLLPy", "parcelRequire0b5b")
-
-//# sourceMappingURL=howTo.4d6bcbeb.js.map
+//# sourceMappingURL=questionPage.4d6bcbeb.js.map

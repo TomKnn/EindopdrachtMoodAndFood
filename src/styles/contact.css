@@ -11,27 +11,121 @@ html {
     width: auto;
     top: 8%;
     left: 48%;
+    opacity: 90%;
     z-index: 2;
 }
-.thoughtBox{
+.olive{
     position: absolute;
-    max-width: 100%;
+    max-width:17%;
     height: auto;
     width: auto;
-    top: 3%;
-    left: 34%;
-    z-index: auto;
+    top: 23%;
+    left: 71%;
+    z-index: 2;
+}
+
+.dots{
+    position: absolute;
+    max-width: 8%;
+    height: auto;
+    width: auto;
+    top: 42%;
+    left: 5%;
+    z-index: 2;
+}
+.kader {
+    position: absolute;
+    max-width: 8%;
+    height: auto;
+    width: auto;
+    top: 42%;
+    left: 5%;
+    opacity: 64%;
+    z-index: 2;
+}
+
+.howToStart{
+    position: absolute;
+    max-width: 9%;
+    height: auto;
+    width: auto;
+    top: 51%;
+    left: 14%;
+    z-index: 2;
+}
+.browse{
+    position: absolute;
+    max-width: 19%;
+    height: auto;
+    width: auto;
+    top: 63%;
+    left: 14%;
+    z-index: 2;
+}
+.contact{
+    position: absolute;
+    max-width: 14%;
+    height: auto;
+    width: auto;
+    top: 75%;
+    left: 14%;
+    z-index: 2;
+}
+.pink{
+    position:absolute ;
+    max-height: 239px;
+    height:auto;
+    width: auto;
+    top: 44%;
+    left: 31%;
+    opacity: 20%;
 }
 .contactAdres{
+    position:absolute ;
+    max-width: 25%;
+    top: 55%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    opacity: 80%;
+}
+.copyright2022{
     position: absolute;
-    left:35%;
-    top:45%;
+    max-width: 10%;
+    height: auto;
+    width: auto;
+    left: 5%;
+    top: 90%;
+    opacity: 60%;
+    z-index: 2;
+}
+.copyrightMoodAndFood{
+    position: absolute;
+    max-width: 12%;
+    height: auto;
+    width: auto;
+    left: 45%;
+    top: 91%;
+    opacity: 60%;
+    z-index: 2;
+
+}
+.copyrightDesign{
+    position: absolute;
+    max-width: 12%;
+    height: auto;
+    width: auto;
+    left: 82%;
+    top: 89%;
+    opacity: 60%;
+    z-index: 2;
 }
 .balk{
     position: absolute;
-    left: 55px;
-    top: 960px;
-    opacity: 80%;
-    width: 1800px;
+    max-width: 94%;
+    height: auto;
+    width: auto;
+    left: 3%;
+    top: 88%;
+    opacity: 65%;
     z-index: 2;
 }

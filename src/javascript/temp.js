@@ -1,4 +1,6 @@
 // https://spoonacular.com/food-api/docs#Get-Recipe-Card
+// http://howbigismybrowser.com/
+// https://stackoverflow.com/questions/50212952/how-to-open-a-html-page-as-popup-within-another-html-page
 // npm install parcel-plugin-nuke-dist --save-dev
 // https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2
 // const recipeSearch = 'https://api.spoonacular.com/recipes/complexSearch?';
@@ -69,3 +71,37 @@
 /*    !*left: 500px;*!*/
 
 /*}*/
+// import {getRecipeByPreferenceAPI} from "./javascript/fetchApiData/getRecipeByPreference";
+//
+//
+// getRecipeByPreferenceAPI().then(ids => {
+// return ids;
+//   // console.log('IDS', ids);
+// })
+// const ids = [];
+// console.log(ids);
+
+// const recipeIdArray = async function (){
+//   const arr = await axios(recipeByPreferenceResults);
+//   return arr.data.results.slice(0, 2).map(({id}) => id);
+//     console.log(recipeIdArray());
+// }
+
+// (async()=> {
+//   const arr = await recipeByPreferenceResults;
+//   const recipeArray = arr.data.results.slice(0, 2).map(({id}) => id);
+//   console.log(recipeArray); })();
+
+// let recipeIdArray;
+// (async()=> {
+//   const arr = await recipeByPreferenceResults;
+//   return recipeIdArray = arr.data.results.slice(0, 2).map(({id}) => id);
+//   })();
+// console.log(recipeIdArray);
+// import cuisineChecklist from "./javascript/browseLists/cuisineChecklist";
+// import intoleranceChecklist from "./javascript/browseLists/intoleranceChecklist";
+// import inclusiveChecklist from "./javascript/browseLists/inclusiveChecklist";
+// import maxReadyTimeChecklist from "./javascript/browseLists/maxReadyTimeChecklist;
+// import createCuisineChecklist from "./javascript/browseLists/cuisineChecklist";
+// import insertFirstImageRow from "./javascript/insertEmojiImages/insertImagesQuestions";
+

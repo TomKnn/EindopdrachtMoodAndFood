@@ -13,6 +13,25 @@ html {
     left: 31px;
     z-index: 2;
 }
+.olive{
+    position: absolute;
+    max-width:20%;
+    height: auto;
+    width: auto;
+    top: 30%;
+    left: 1%;
+    z-index: 2;
+}
+.enjoy{
+    position: absolute;
+    max-width:15%;
+    rotation:30grad;
+    height:auto;
+    width: auto;
+    left:21%;
+    top: 38%;
+    z-index: 2;
+}
 .block{
     position: absolute;
     max-width: 21%;
@@ -25,25 +44,34 @@ html {
 }
 .howToBig{
     position: absolute;
-    max-width: 20%;
+    max-width: 23%;
     height:auto;
     width: auto;
-    left:23%;
+    left:25%;
     top:20%;
 }
-.tekst{
+.tekst {
     position: absolute;
-    max-width: 40%;
+    max-width: 68%;
+    height: auto;
+    width: auto;
+    opacity: 90%;
+    left: 25%;
+    top: 31%;
+}
+.emojis{
+    position: absolute;
+    max-width: 48%;
     height:auto;
     width: auto;
-    left:44%;
-    top:9%;
+    left:38%;
+    top: 37%;
 }
 .kader{
     position: absolute;
-    max-width: 50%;
+    max-width: 76%;
     height:auto;
     width: auto;
-    left:22%;
-    top: 32%;
+    left:21%;
+    top: 38%;
 }

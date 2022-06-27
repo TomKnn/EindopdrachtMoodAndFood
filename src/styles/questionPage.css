@@ -35,8 +35,8 @@ html {
     position: absolute;
     height: auto;
     width: auto;
-    max-width: 10%;
-    opacity: 40%;
+    max-width: 11%;
+    opacity: 25%;
     top: 52%;
     left: 1%;
     z-index: 2;
@@ -45,32 +45,31 @@ html {
     position: absolute;
     height: auto;
     width: auto;
-    max-width: 100%;
+    max-width: 90%;
     background-color: #ff88f9; /* Green */
     border: none;
     color: #6F3780;
     font-family: "Lucida Handwriting";
     font-size: 20px;
-    top: 77%;
-    left: 86%;
+    top: 76%;
+    left: 87%;
 }
 .resultArrow{
     position: absolute;
     height: auto;
     width: auto;
     max-width: 10%;
-    top: 73%;
-    left: 85%;
+    top: 72%;
+    left: 86%;
 }
 .jesus{
     position: absolute;
-    /*height: 290px;*/
-    /*width: 206px;*/
     top: 37%;
     left: 12%;
     max-width: 11%;
     height: auto;
     width: auto;
+    z-index: 2;
 }
 .jesus:active{
     position: absolute;
@@ -78,13 +77,14 @@ html {
     height: auto;
     width: auto;
     top: 37%;
-    left: 10%;
+    left: 12%;
+    z-index: 2;
 }
 #jesus{
     position: absolute;
     top: 50%;
     left: 18%;
-    z-index: 2;
+    z-index: 1;
 }
 
 .hitler{
@@ -95,6 +95,7 @@ html {
     width: auto;
     top: 36%;
     left: 30%;
+    z-index: 2;
 }
 .hitler:active{
     position: absolute;
@@ -103,6 +104,7 @@ html {
     width: auto;
     top: 36%;
     left: 30%;
+    z-index: 2;
 }
 #hitler{
     position: absolute;
@@ -110,6 +112,7 @@ html {
     width: auto;
     top: 50%;
     left: 34%;
+    z-index: 1;
 }
 .robot{
     position: absolute;
@@ -118,6 +121,7 @@ html {
     max-width: 16%;
     top: 39%;
     left: 45%;
+    z-index: 2;
 }
 .robot:active{
     position: absolute;
@@ -125,13 +129,16 @@ html {
     width: auto;
     max-width: 15%;
     top: 39%;
-    left: 44%;
+    left: 45%;
+    z-index: 2;
 }
 #robot{
     position: absolute;
-    max-width: 16%;
+    height: auto;
+    width: auto;
     top: 50%;
     left: 53%;
+    z-index: 1;
 }
 .gypsyKid{
     position: absolute;
@@ -155,16 +162,18 @@ html {
 }
 #gypsyKid{
     position: absolute;
+    height: auto;
+    width: auto;
     top: 50%;
     left: 70%;
-    z-index: 2;
+    z-index: 1;
 }
 .manic{
     position: absolute;
     height: auto;
     width: auto;
     max-width: 15%;
-    opacity: 90%;
+    opacity: 95%;
     top: 41%;
     left: 80%;
     z-index: 2;
@@ -174,7 +183,7 @@ html {
     height: auto;
     width: auto;
     max-width: 14%;
-    opacity: 90%;
+    opacity: 95%;
     top: 41%;
     left: 80%;
     z-index: 2;
@@ -183,7 +192,7 @@ html {
     position: absolute;
     top: 50%;
     left: 87%;
-    z-index: 2;
+    z-index: 1;
 }
 .chillDude{
     position: absolute;
@@ -192,6 +201,7 @@ html {
     max-width: 12%;
     top: 66%;
     left: 22%;
+    z-index: 2;
 }
 .chillDude:active{
     position: absolute;
@@ -200,11 +210,15 @@ html {
     max-width: 11%;
     top: 66%;
     left: 22%;
+    z-index: 2;
 }
 #chillDude{
     position: absolute;
-    top: 70%;
-    left: 27%;
+    height: auto;
+    width: auto;
+    top: 75%;
+    left: 28%;
+    z-index: 1;
 }
 .wekker{
     position: absolute;
@@ -213,6 +227,7 @@ html {
     max-width: 12%;
     top: 66%;
     left: 46%;
+    z-index: 2;
 }
 .wekker:active{
     position: absolute;
@@ -221,11 +236,15 @@ html {
     max-width: 11%;
     top: 66%;
     left: 46%;
+    z-index: 2;
 }
 #wekker{
     position: absolute;
-    top: 70%;
+    height: auto;
+    width: auto;
+    top: 75%;
     left: 51%;
+    z-index: 1;
 }
 .timebomb{
     position: absolute;
@@ -234,6 +253,7 @@ html {
     max-width: 15%;
     top: 67%;
     left: 68%;
+    z-index: 2;
 }
 .timebomb:active{
     position: absolute;
@@ -242,21 +262,24 @@ html {
     max-width: 14%;
     top: 67%;
     left: 68%;
+    z-index: 2;
 }
 #timebomb{
     position: absolute;
-    top: 77%;
+    height: auto;
+    width: auto;
+    top: 75%;
     left: 74%;
+    z-index: 1;
 }
-
 .voel {
     position:absolute;
     height: auto;
     width: auto;
     max-width: 30%;
-    opacity: 90%;
+    opacity: 80%;
     top: 28%;
-    left: 20%;
+    left: 15%;
     z-index: auto;
 }
 .kader {
@@ -310,7 +333,7 @@ html {
     top: 960px;
     opacity: 65%;
     /*width: 1800px;*/
-    z-index: 1;
+    z-index: 2;
 }
 .copyright2022{
     position: absolute;
@@ -342,9 +365,12 @@ html {
     opacity: 30%;
     z-index: 2;
 }
-#test{
+.recipeCard{
     position: absolute;
-    z-index: 2;
-    left: 50%;
-    top: 50%;
+    max-width: 38%;
+    height: auto;
+    width: auto;
+    top: 1%;
+    left: 30%;
+    z-index: 3;
 }
