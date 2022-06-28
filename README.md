@@ -13,18 +13,18 @@ Heb je vragen of suggesties? Via de contactpagina kun je ons jouw bericht toestu
 
 Installeren en starten:
 
-⦁   Clone het project van deze locatie https://github.com/TomKnn/EindopdrachtMoodAndFood
+⦁	Clone het project van deze locatie https://github.com/TomKnn/EindopdrachtMoodAndFood
 
-⦁   Om te starten, typ _npm start_ in de terminal van Webstorm. NPM/Parcel en Axios zijn al geconfigureerd. 
+⦁	Om te starten, typ _npm start_ in de terminal van Webstorm. NPM/Parcel en Axios zijn al geconfigureerd. 
 
-⦁   Wanneer NPM vulnerabilities rapporteert kun je _npm audit fix_ invoeren in de terminal. Volg hierna de instructies.
+⦁	Wanneer NPM vulnerabilities rapporteert kun je _npm audit fix_ invoeren in de terminal. Volg hierna de instructies.
 
 ⦁   Open http://localhost:1234 in Google Chrome (andere browsers kunnen bugs vertonen)
 
-⦁   De API key is: _c8b8bc2e8c04457083d6d5ed821d386e_ Deze is echter al verwerkt in de code en hier hoeft verder niks mee te gebeuren.
+⦁	De API key is: _b4408aa9ab144e47ae2bf8eff93e72f5_ Deze is echter al verwerkt in de code en hier hoeft verder niks mee te gebeuren.
 
-⦁   Voor uitleg over de quickSearch (search via de emoji`s) navigeer naar 'how to' links in het scherm.
+⦁	Voor uitleg over de quickSearch (search via de emoji`s) navigeer naar 'how to' links in het scherm.
 
 ⦁   Je kunt op het logo klikken om terug te keren naar het beginscherm, ook als je de recipeCard in beeld hebt.
 
-⦁   Eet smakelijk!
+⦁  Eet smakelijk!
