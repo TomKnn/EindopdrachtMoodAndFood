@@ -23,8 +23,6 @@ Installeren en starten:
 
 ⦁	De API key is: _b4408aa9ab144e47ae2bf8eff93e72f5_ Deze is echter al verwerkt in de code en hier hoeft verder niks mee te gebeuren.
 
-⦁	Voor uitleg over de quickSearch (search via de emoji`s) navigeer naar 'how to' links in het scherm.
-
 ⦁   Je kunt op het logo klikken om terug te keren naar het beginscherm, ook als je de recipeCard in beeld hebt.
 
 ⦁  Eet smakelijk!
