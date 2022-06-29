@@ -9,7 +9,7 @@ Als je uitgebreider wilt zoeken is er de 'browse' optie waar je uit een aantal l
 
 **Mood&Food speelt qua ontwerp meer in op beleving dan het typische 'blog' ontwerp.**
 
-Heb je vragen of suggesties? Via de contactpagina kun je ons jouw bericht toesturen of kom langs op locatie. Wij wonen in Los Santos in het herontdekte continent Lemuria.
+Heb je vragen of suggesties? Via de contactpagina kun je ons jouw bericht toesturen of kom langs op locatie. Wij wonen in Los Santos, gelegen op het herontdekte continent Lemuria.
 
 Installeren en starten:
 
